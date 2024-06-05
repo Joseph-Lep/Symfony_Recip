@@ -19,7 +19,7 @@ class AddRecipController extends AbstractController
         $form = $this->createForm(AddRecipType::class, $add_recip);
         // * $this correspond à une instance de AddRecipController
         $form->handleRequest($request);
-        // £ J'appelle la méthode handerequest (mais que contient $request ?) pour gèrer $form 
+        // £ J'appelle la méthode handerequest ($request attrappe les données _POST) pour gèrer $form 
         if ($form->isSubmitted()) {
             $em->persist($add_recip);
             $em->flush();
