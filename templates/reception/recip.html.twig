@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReceptionController!{% endblock %}
+
+{% block body %}
+
+{% for i in recip %}
+{# for i in varibale du controller #}
+<ul>
+<li>{{i.id}}</li>
+<li>{{i.name}}</li>
+<li>{{i.text}}</li>
+<li>{{i.dateofcreate|date('d-m-Y H:i')}}</li>
+{# £ datetime est à nouveau un objet quand il passe de la bdd vers php il faut donc le convertir grace à |date('')  #}
+<li>{{i.img}}</li>
+</ul>
+{% else %}
+<p>Rien :(</p>
+{% endfor %}
+
+
+{% endblock %}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
